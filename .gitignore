@@ -1,0 +1,39 @@
+# --- System & IDE ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- Backend (Go) ---
+# Binaries & Executables
+*.exe
+*.test
+backend/main
+backend/backend
+
+# Dependencies & Config
+backend/vendor/
+backend/.env
+
+# --- Frontend (Vue.js) ---
+# Dependencies
+front-end/node_modules/
+
+# Build Output
+front-end/dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment
+front-end/.env.local
+
+# --- Storage (Reports) ---
+# Ignore all generated reports (PDF, CSV, JSON) inside backend/storage/reports
+backend/storage/reports/*
+
+# Exception: Keep the .gitkeep file to maintain folder structure
+!backend/storage/reports/.gitkeep

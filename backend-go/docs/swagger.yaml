@@ -1,0 +1,445 @@
+basePath: /api
+definitions:
+  models.Booking:
+    properties:
+      end_time:
+        description: 'Format: "2006-01-02 15:04:05"'
+        type: string
+      id:
+        type: integer
+      purpose:
+        type: string
+      room_id:
+        type: integer
+      start_time:
+        description: 'Format: "2006-01-02 15:04:05"'
+        type: string
+      status:
+        type: string
+      user_id:
+        type: integer
+    type: object
+  models.LoginRequest:
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+    required:
+    - email
+    - password
+    type: object
+  models.Room:
+    properties:
+      capacity:
+        type: integer
+      id:
+        type: integer
+      is_active:
+        type: boolean
+      name:
+        type: string
+      type:
+        type: string
+    type: object
+  models.User:
+    properties:
+      email:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      password:
+        type: string
+      role:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact:
+    email: admin@iti.ac.id
+    name: Engineering Team
+  description: API Sistem Pemesanan Ruang Kelas dan Lab - ITI.
+  termsOfService: http://swagger.io/terms/
+  title: ITIDoorz Room Booking API
+  version: "1.0"
+paths:
+  /bookings:
+    get:
+      description: Mengambil semua data pemesanan (Admin) atau filter berdasarkan
+        User ID (Dosen).
+      parameters:
+      - description: Filter berdasarkan User ID (Dosen)
+        in: query
+        name: user_id
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.Booking'
+            type: array
+        "400":
+          description: 'error: Parameter tidak valid'
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: 'error: Gagal mengambil data'
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: List daftar pemesanan
+      tags:
+      - Bookings
+    post:
+      consumes:
+      - application/json
+      description: Dosen mengajukan jadwal penggunaan ruang. Sistem akan mengecek
+        bentrok jadwal secara otomatis.
+      parameters:
+      - description: Data Pemesanan Ruang
+        in: body
+        name: booking
+        required: true
+        schema:
+          $ref: '#/definitions/models.Booking'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: 'message: Pemesanan berhasil diajukan'
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "400":
+          description: 'error: Data input tidak valid'
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "409":
+          description: 'error: Jadwal bentrok'
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: 'error: Gagal menyimpan data'
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Ajukan pemesanan ruang
+      tags:
+      - Bookings
+  /bookings/{id}/approve:
+    post:
+      description: Mengubah status pemesanan menjadi 'approved' berdasarkan ID.
+      parameters:
+      - description: Booking ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: 'message: Pemesanan telah disetujui'
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "400":
+          description: 'error: ID tidak valid'
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: 'error: Gagal update data'
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Setujui pemesanan (Admin)
+      tags:
+      - Bookings
+  /bookings/{id}/reject:
+    post:
+      description: Mengubah status pemesanan menjadi 'rejected' berdasarkan ID.
+      parameters:
+      - description: Booking ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: 'message: Pemesanan telah ditolak'
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "400":
+          description: 'error: ID tidak valid'
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: 'error: Gagal update data'
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Tolak pemesanan (Admin)
+      tags:
+      - Bookings
+  /login:
+    post:
+      consumes:
+      - application/json
+      description: Masuk menggunakan Email dan Password untuk mendapatkan Token JWT
+      parameters:
+      - description: Email dan Password
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.LoginRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Login User
+      tags:
+      - Auth
+  /reports/generate:
+    get:
+      description: Membuat laporan CSV & JSON berisi statistik pemakaian ruangan berdasarkan
+        Bulan dan Tahun
+      parameters:
+      - description: Bulan (1-12)
+        in: query
+        name: month
+        required: true
+        type: integer
+      - description: Tahun (e.g. 2026)
+        in: query
+        name: year
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Generate Monthly Report
+      tags:
+      - Reports
+  /rooms:
+    get:
+      description: Mengambil semua data ruang kelas dan laboratorium yang terdaftar.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.Room'
+            type: array
+        "500":
+          description: 'error: Gagal mengambil data'
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Daftar semua ruang
+      tags:
+      - Rooms
+    post:
+      consumes:
+      - application/json
+      description: Menambahkan data ruang baru ke dalam sistem (Khusus Admin).
+      parameters:
+      - description: Data Ruang Baru
+        in: body
+        name: room
+        required: true
+        schema:
+          $ref: '#/definitions/models.Room'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: 'message: Ruang berhasil ditambahkan'
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "400":
+          description: 'error: Input data tidak valid'
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: 'error: Gagal menyimpan data'
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Tambah ruang baru
+      tags:
+      - Rooms
+  /rooms/{id}:
+    delete:
+      description: Menghapus data ruang jika tidak ada pemesanan aktif (pending/approved)
+        yang terikat.
+      parameters:
+      - description: Room ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: 'message: Ruang berhasil dihapus'
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "400":
+          description: 'error: ID tidak valid'
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "409":
+          description: 'error: Ruang memiliki pemesanan aktif'
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: 'error: Gagal menghapus ruang'
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Hapus ruang
+      tags:
+      - Rooms
+    put:
+      consumes:
+      - application/json
+      description: Mengubah informasi ruang (nama, kapasitas, tipe) berdasarkan ID.
+      parameters:
+      - description: Room ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Data Ruang yang diupdate
+        in: body
+        name: room
+        required: true
+        schema:
+          $ref: '#/definitions/models.Room'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 'message: Data ruang berhasil diperbarui'
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "400":
+          description: 'error: ID atau data tidak valid'
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: 'error: Gagal memperbarui data'
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Perbarui data ruang
+      tags:
+      - Rooms
+  /stats:
+    get:
+      responses: {}
+      summary: Ambil Statistik Dashboard
+      tags:
+      - Stats
+  /users:
+    get:
+      description: Mengambil daftar semua user yang terdaftar (untuk dashboard admin)
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.User'
+            type: array
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Get All Users
+      tags:
+      - Users
+securityDefinitions:
+  BearerAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

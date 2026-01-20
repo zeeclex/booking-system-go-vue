@@ -1,0 +1,272 @@
+[
+  {
+    "id": 354,
+    "room_id": 9,
+    "user_id": 3,
+    "start_time": "2026-06-01T14:00:00Z",
+    "end_time": "2026-06-01T16:00:00Z",
+    "purpose": "Kelas Tambahan",
+    "status": "approved"
+  },
+  {
+    "id": 462,
+    "room_id": 14,
+    "user_id": 1,
+    "start_time": "2026-06-03T09:00:00Z",
+    "end_time": "2026-06-03T10:00:00Z",
+    "purpose": "Rapat Himpunan",
+    "status": "approved"
+  },
+  {
+    "id": 62,
+    "room_id": 5,
+    "user_id": 1,
+    "start_time": "2026-06-04T09:00:00Z",
+    "end_time": "2026-06-04T11:00:00Z",
+    "purpose": "Sidang Skripsi",
+    "status": "approved"
+  },
+  {
+    "id": 450,
+    "room_id": 12,
+    "user_id": 4,
+    "start_time": "2026-06-04T10:00:00Z",
+    "end_time": "2026-06-04T13:00:00Z",
+    "purpose": "Sidang Skripsi",
+    "status": "approved"
+  },
+  {
+    "id": 65,
+    "room_id": 9,
+    "user_id": 1,
+    "start_time": "2026-06-06T13:00:00Z",
+    "end_time": "2026-06-06T15:00:00Z",
+    "purpose": "Kelas Tambahan",
+    "status": "approved"
+  },
+  {
+    "id": 204,
+    "room_id": 8,
+    "user_id": 2,
+    "start_time": "2026-06-07T14:00:00Z",
+    "end_time": "2026-06-07T17:00:00Z",
+    "purpose": "Kelas Tambahan",
+    "status": "approved"
+  },
+  {
+    "id": 496,
+    "room_id": 6,
+    "user_id": 2,
+    "start_time": "2026-06-08T08:00:00Z",
+    "end_time": "2026-06-08T10:00:00Z",
+    "purpose": "Sidang Skripsi",
+    "status": "approved"
+  },
+  {
+    "id": 71,
+    "room_id": 15,
+    "user_id": 2,
+    "start_time": "2026-06-08T09:00:00Z",
+    "end_time": "2026-06-08T12:00:00Z",
+    "purpose": "Rapat Himpunan",
+    "status": "approved"
+  },
+  {
+    "id": 249,
+    "room_id": 14,
+    "user_id": 1,
+    "start_time": "2026-06-08T15:00:00Z",
+    "end_time": "2026-06-08T17:00:00Z",
+    "purpose": "Sidang Skripsi",
+    "status": "approved"
+  },
+  {
+    "id": 153,
+    "room_id": 8,
+    "user_id": 2,
+    "start_time": "2026-06-09T08:00:00Z",
+    "end_time": "2026-06-09T09:00:00Z",
+    "purpose": "Sidang Skripsi",
+    "status": "approved"
+  },
+  {
+    "id": 19,
+    "room_id": 6,
+    "user_id": 4,
+    "start_time": "2026-06-09T09:00:00Z",
+    "end_time": "2026-06-09T12:00:00Z",
+    "purpose": "Sidang Skripsi",
+    "status": "approved"
+  },
+  {
+    "id": 482,
+    "room_id": 4,
+    "user_id": 4,
+    "start_time": "2026-06-12T14:00:00Z",
+    "end_time": "2026-06-12T15:00:00Z",
+    "purpose": "Sidang Skripsi",
+    "status": "approved"
+  },
+  {
+    "id": 250,
+    "room_id": 5,
+    "user_id": 5,
+    "start_time": "2026-06-13T08:00:00Z",
+    "end_time": "2026-06-13T11:00:00Z",
+    "purpose": "Rapat Himpunan",
+    "status": "approved"
+  },
+  {
+    "id": 311,
+    "room_id": 13,
+    "user_id": 3,
+    "start_time": "2026-06-14T08:00:00Z",
+    "end_time": "2026-06-14T11:00:00Z",
+    "purpose": "Rapat Himpunan",
+    "status": "approved"
+  },
+  {
+    "id": 61,
+    "room_id": 9,
+    "user_id": 2,
+    "start_time": "2026-06-16T11:00:00Z",
+    "end_time": "2026-06-16T12:00:00Z",
+    "purpose": "Kelas Tambahan",
+    "status": "approved"
+  },
+  {
+    "id": 148,
+    "room_id": 12,
+    "user_id": 5,
+    "start_time": "2026-06-16T11:00:00Z",
+    "end_time": "2026-06-16T13:00:00Z",
+    "purpose": "Sidang Skripsi",
+    "status": "approved"
+  },
+  {
+    "id": 15,
+    "room_id": 10,
+    "user_id": 2,
+    "start_time": "2026-06-17T12:00:00Z",
+    "end_time": "2026-06-17T15:00:00Z",
+    "purpose": "Kelas Tambahan",
+    "status": "approved"
+  },
+  {
+    "id": 483,
+    "room_id": 15,
+    "user_id": 3,
+    "start_time": "2026-06-20T10:00:00Z",
+    "end_time": "2026-06-20T11:00:00Z",
+    "purpose": "Rapat Himpunan",
+    "status": "approved"
+  },
+  {
+    "id": 270,
+    "room_id": 4,
+    "user_id": 2,
+    "start_time": "2026-06-21T09:00:00Z",
+    "end_time": "2026-06-21T11:00:00Z",
+    "purpose": "Rapat Himpunan",
+    "status": "approved"
+  },
+  {
+    "id": 413,
+    "room_id": 12,
+    "user_id": 3,
+    "start_time": "2026-06-21T09:00:00Z",
+    "end_time": "2026-06-21T11:00:00Z",
+    "purpose": "Kelas Tambahan",
+    "status": "approved"
+  },
+  {
+    "id": 174,
+    "room_id": 3,
+    "user_id": 1,
+    "start_time": "2026-06-21T10:00:00Z",
+    "end_time": "2026-06-21T13:00:00Z",
+    "purpose": "Rapat Himpunan",
+    "status": "approved"
+  },
+  {
+    "id": 34,
+    "room_id": 11,
+    "user_id": 3,
+    "start_time": "2026-06-21T11:00:00Z",
+    "end_time": "2026-06-21T13:00:00Z",
+    "purpose": "Rapat Himpunan",
+    "status": "approved"
+  },
+  {
+    "id": 106,
+    "room_id": 14,
+    "user_id": 5,
+    "start_time": "2026-06-21T11:00:00Z",
+    "end_time": "2026-06-21T14:00:00Z",
+    "purpose": "Kelas Tambahan",
+    "status": "approved"
+  },
+  {
+    "id": 328,
+    "room_id": 5,
+    "user_id": 3,
+    "start_time": "2026-06-23T13:00:00Z",
+    "end_time": "2026-06-23T16:00:00Z",
+    "purpose": "Sidang Skripsi",
+    "status": "approved"
+  },
+  {
+    "id": 470,
+    "room_id": 12,
+    "user_id": 3,
+    "start_time": "2026-06-23T13:00:00Z",
+    "end_time": "2026-06-23T15:00:00Z",
+    "purpose": "Kelas Tambahan",
+    "status": "approved"
+  },
+  {
+    "id": 46,
+    "room_id": 3,
+    "user_id": 4,
+    "start_time": "2026-06-24T15:00:00Z",
+    "end_time": "2026-06-24T17:00:00Z",
+    "purpose": "Rapat Himpunan",
+    "status": "approved"
+  },
+  {
+    "id": 387,
+    "room_id": 3,
+    "user_id": 1,
+    "start_time": "2026-06-24T15:00:00Z",
+    "end_time": "2026-06-24T17:00:00Z",
+    "purpose": "Rapat Himpunan",
+    "status": "approved"
+  },
+  {
+    "id": 332,
+    "room_id": 12,
+    "user_id": 4,
+    "start_time": "2026-06-26T09:00:00Z",
+    "end_time": "2026-06-26T11:00:00Z",
+    "purpose": "Rapat Himpunan",
+    "status": "approved"
+  },
+  {
+    "id": 326,
+    "room_id": 3,
+    "user_id": 2,
+    "start_time": "2026-06-27T11:00:00Z",
+    "end_time": "2026-06-27T12:00:00Z",
+    "purpose": "Sidang Skripsi",
+    "status": "approved"
+  },
+  {
+    "id": 497,
+    "room_id": 4,
+    "user_id": 3,
+    "start_time": "2026-06-28T13:00:00Z",
+    "end_time": "2026-06-28T16:00:00Z",
+    "purpose": "Sidang Skripsi",
+    "status": "approved"
+  }
+]

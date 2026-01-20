@@ -1,0 +1,16 @@
+ID Ruang,Nama Ruang,Tipe,Total Jam Terpakai,Jumlah Peminjaman
+1,Lab RPL,lab,2.00,1
+2,Lab Jaringan,lab,3.00,2
+3,Lab Multimedia,lab,4.00,2
+4,Lab Hardware,lab,3.00,1
+5,Lab AI & Data,lab,7.00,4
+6,R. 201 (Teori),kelas,3.00,1
+7,R. 202 (Teori),kelas,5.00,3
+8,R. 203 (Teori),kelas,2.00,1
+9,R. 301 (Diskusi),kelas,0.00,0
+10,R. 302 (Diskusi),kelas,6.00,3
+11,Aula Serbaguna,aula,3.00,1
+12,Auditorium Utama,aula,4.00,3
+13,R. Sidang A,kelas,0.00,0
+14,R. Sidang B,kelas,7.00,3
+15,Gudang Arsip,gudang,5.00,2

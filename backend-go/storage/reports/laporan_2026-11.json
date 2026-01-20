@@ -1,0 +1,245 @@
+[
+  {
+    "id": 108,
+    "room_id": 15,
+    "user_id": 4,
+    "start_time": "2026-11-01T13:00:00Z",
+    "end_time": "2026-11-01T16:00:00Z",
+    "purpose": "Sidang Skripsi",
+    "status": "approved"
+  },
+  {
+    "id": 430,
+    "room_id": 2,
+    "user_id": 5,
+    "start_time": "2026-11-02T12:00:00Z",
+    "end_time": "2026-11-02T14:00:00Z",
+    "purpose": "Kelas Tambahan",
+    "status": "approved"
+  },
+  {
+    "id": 79,
+    "room_id": 5,
+    "user_id": 4,
+    "start_time": "2026-11-03T15:00:00Z",
+    "end_time": "2026-11-03T18:00:00Z",
+    "purpose": "Rapat Himpunan",
+    "status": "approved"
+  },
+  {
+    "id": 445,
+    "room_id": 10,
+    "user_id": 4,
+    "start_time": "2026-11-05T08:00:00Z",
+    "end_time": "2026-11-05T11:00:00Z",
+    "purpose": "Rapat Himpunan",
+    "status": "approved"
+  },
+  {
+    "id": 219,
+    "room_id": 8,
+    "user_id": 1,
+    "start_time": "2026-11-05T09:00:00Z",
+    "end_time": "2026-11-05T11:00:00Z",
+    "purpose": "Rapat Himpunan",
+    "status": "approved"
+  },
+  {
+    "id": 267,
+    "room_id": 12,
+    "user_id": 3,
+    "start_time": "2026-11-06T10:00:00Z",
+    "end_time": "2026-11-06T12:00:00Z",
+    "purpose": "Kelas Tambahan",
+    "status": "approved"
+  },
+  {
+    "id": 281,
+    "room_id": 5,
+    "user_id": 2,
+    "start_time": "2026-11-06T11:00:00Z",
+    "end_time": "2026-11-06T13:00:00Z",
+    "purpose": "Sidang Skripsi",
+    "status": "approved"
+  },
+  {
+    "id": 364,
+    "room_id": 3,
+    "user_id": 1,
+    "start_time": "2026-11-06T11:00:00Z",
+    "end_time": "2026-11-06T12:00:00Z",
+    "purpose": "Kelas Tambahan",
+    "status": "approved"
+  },
+  {
+    "id": 349,
+    "room_id": 1,
+    "user_id": 2,
+    "start_time": "2026-11-08T14:00:00Z",
+    "end_time": "2026-11-08T16:00:00Z",
+    "purpose": "Rapat Himpunan",
+    "status": "approved"
+  },
+  {
+    "id": 300,
+    "room_id": 10,
+    "user_id": 2,
+    "start_time": "2026-11-08T15:00:00Z",
+    "end_time": "2026-11-08T16:00:00Z",
+    "purpose": "Rapat Himpunan",
+    "status": "approved"
+  },
+  {
+    "id": 144,
+    "room_id": 2,
+    "user_id": 1,
+    "start_time": "2026-11-10T08:00:00Z",
+    "end_time": "2026-11-10T09:00:00Z",
+    "purpose": "Sidang Skripsi",
+    "status": "approved"
+  },
+  {
+    "id": 392,
+    "room_id": 7,
+    "user_id": 1,
+    "start_time": "2026-11-10T08:00:00Z",
+    "end_time": "2026-11-10T09:00:00Z",
+    "purpose": "Rapat Himpunan",
+    "status": "approved"
+  },
+  {
+    "id": 447,
+    "room_id": 5,
+    "user_id": 2,
+    "start_time": "2026-11-13T12:00:00Z",
+    "end_time": "2026-11-13T13:00:00Z",
+    "purpose": "Rapat Himpunan",
+    "status": "approved"
+  },
+  {
+    "id": 68,
+    "room_id": 14,
+    "user_id": 2,
+    "start_time": "2026-11-14T13:00:00Z",
+    "end_time": "2026-11-14T16:00:00Z",
+    "purpose": "Kelas Tambahan",
+    "status": "approved"
+  },
+  {
+    "id": 51,
+    "room_id": 14,
+    "user_id": 5,
+    "start_time": "2026-11-14T15:00:00Z",
+    "end_time": "2026-11-14T18:00:00Z",
+    "purpose": "Rapat Himpunan",
+    "status": "approved"
+  },
+  {
+    "id": 372,
+    "room_id": 11,
+    "user_id": 4,
+    "start_time": "2026-11-14T16:00:00Z",
+    "end_time": "2026-11-14T19:00:00Z",
+    "purpose": "Rapat Himpunan",
+    "status": "approved"
+  },
+  {
+    "id": 317,
+    "room_id": 7,
+    "user_id": 2,
+    "start_time": "2026-11-15T08:00:00Z",
+    "end_time": "2026-11-15T11:00:00Z",
+    "purpose": "Kelas Tambahan",
+    "status": "approved"
+  },
+  {
+    "id": 484,
+    "room_id": 10,
+    "user_id": 5,
+    "start_time": "2026-11-15T08:00:00Z",
+    "end_time": "2026-11-15T10:00:00Z",
+    "purpose": "Rapat Himpunan",
+    "status": "approved"
+  },
+  {
+    "id": 334,
+    "room_id": 12,
+    "user_id": 2,
+    "start_time": "2026-11-16T09:00:00Z",
+    "end_time": "2026-11-16T10:00:00Z",
+    "purpose": "Rapat Himpunan",
+    "status": "approved"
+  },
+  {
+    "id": 344,
+    "room_id": 6,
+    "user_id": 3,
+    "start_time": "2026-11-17T11:00:00Z",
+    "end_time": "2026-11-17T14:00:00Z",
+    "purpose": "Maintenance Rutin",
+    "status": "approved"
+  },
+  {
+    "id": 125,
+    "room_id": 12,
+    "user_id": 4,
+    "start_time": "2026-11-18T11:00:00Z",
+    "end_time": "2026-11-18T12:00:00Z",
+    "purpose": "Maintenance Rutin",
+    "status": "approved"
+  },
+  {
+    "id": 390,
+    "room_id": 5,
+    "user_id": 5,
+    "start_time": "2026-11-19T13:00:00Z",
+    "end_time": "2026-11-19T14:00:00Z",
+    "purpose": "Kelas Tambahan",
+    "status": "approved"
+  },
+  {
+    "id": 199,
+    "room_id": 7,
+    "user_id": 5,
+    "start_time": "2026-11-21T08:00:00Z",
+    "end_time": "2026-11-21T09:00:00Z",
+    "purpose": "Sidang Skripsi",
+    "status": "approved"
+  },
+  {
+    "id": 418,
+    "room_id": 3,
+    "user_id": 2,
+    "start_time": "2026-11-22T08:00:00Z",
+    "end_time": "2026-11-22T11:00:00Z",
+    "purpose": "Rapat Himpunan",
+    "status": "approved"
+  },
+  {
+    "id": 131,
+    "room_id": 14,
+    "user_id": 5,
+    "start_time": "2026-11-23T11:00:00Z",
+    "end_time": "2026-11-23T12:00:00Z",
+    "purpose": "Rapat Himpunan",
+    "status": "approved"
+  },
+  {
+    "id": 135,
+    "room_id": 15,
+    "user_id": 3,
+    "start_time": "2026-11-25T13:00:00Z",
+    "end_time": "2026-11-25T15:00:00Z",
+    "purpose": "Kelas Tambahan",
+    "status": "approved"
+  },
+  {
+    "id": 181,
+    "room_id": 4,
+    "user_id": 3,
+    "start_time": "2026-11-27T09:00:00Z",
+    "end_time": "2026-11-27T12:00:00Z",
+    "purpose": "Maintenance Rutin",
+    "status": "approved"
+  }
+]

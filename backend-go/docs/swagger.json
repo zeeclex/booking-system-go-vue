@@ -1,0 +1,666 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "API Sistem Pemesanan Ruang Kelas dan Lab - ITI.",
+        "title": "ITIDoorz Room Booking API",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "name": "Engineering Team",
+            "email": "admin@iti.ac.id"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost:8080",
+    "basePath": "/api",
+    "paths": {
+        "/bookings": {
+            "get": {
+                "description": "Mengambil semua data pemesanan (Admin) atau filter berdasarkan User ID (Dosen).",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Bookings"
+                ],
+                "summary": "List daftar pemesanan",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Filter berdasarkan User ID (Dosen)",
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.Booking"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "error: Parameter tidak valid",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "error: Gagal mengambil data",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Dosen mengajukan jadwal penggunaan ruang. Sistem akan mengecek bentrok jadwal secara otomatis.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Bookings"
+                ],
+                "summary": "Ajukan pemesanan ruang",
+                "parameters": [
+                    {
+                        "description": "Data Pemesanan Ruang",
+                        "name": "booking",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Booking"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "message: Pemesanan berhasil diajukan",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "error: Data input tidak valid",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "error: Jadwal bentrok",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "error: Gagal menyimpan data",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/bookings/{id}/approve": {
+            "post": {
+                "description": "Mengubah status pemesanan menjadi 'approved' berdasarkan ID.",
+                "tags": [
+                    "Bookings"
+                ],
+                "summary": "Setujui pemesanan (Admin)",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Booking ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "message: Pemesanan telah disetujui",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "error: ID tidak valid",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "error: Gagal update data",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/bookings/{id}/reject": {
+            "post": {
+                "description": "Mengubah status pemesanan menjadi 'rejected' berdasarkan ID.",
+                "tags": [
+                    "Bookings"
+                ],
+                "summary": "Tolak pemesanan (Admin)",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Booking ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "message: Pemesanan telah ditolak",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "error: ID tidak valid",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "error: Gagal update data",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/login": {
+            "post": {
+                "description": "Masuk menggunakan Email dan Password untuk mendapatkan Token JWT",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Login User",
+                "parameters": [
+                    {
+                        "description": "Email dan Password",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.LoginRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/reports/generate": {
+            "get": {
+                "description": "Membuat laporan CSV \u0026 JSON berisi statistik pemakaian ruangan berdasarkan Bulan dan Tahun",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Reports"
+                ],
+                "summary": "Generate Monthly Report",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Bulan (1-12)",
+                        "name": "month",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Tahun (e.g. 2026)",
+                        "name": "year",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/rooms": {
+            "get": {
+                "description": "Mengambil semua data ruang kelas dan laboratorium yang terdaftar.",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Rooms"
+                ],
+                "summary": "Daftar semua ruang",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.Room"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "error: Gagal mengambil data",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Menambahkan data ruang baru ke dalam sistem (Khusus Admin).",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Rooms"
+                ],
+                "summary": "Tambah ruang baru",
+                "parameters": [
+                    {
+                        "description": "Data Ruang Baru",
+                        "name": "room",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Room"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "message: Ruang berhasil ditambahkan",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "error: Input data tidak valid",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "error: Gagal menyimpan data",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/rooms/{id}": {
+            "put": {
+                "description": "Mengubah informasi ruang (nama, kapasitas, tipe) berdasarkan ID.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Rooms"
+                ],
+                "summary": "Perbarui data ruang",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Room ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Data Ruang yang diupdate",
+                        "name": "room",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Room"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "message: Data ruang berhasil diperbarui",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "error: ID atau data tidak valid",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "error: Gagal memperbarui data",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Menghapus data ruang jika tidak ada pemesanan aktif (pending/approved) yang terikat.",
+                "tags": [
+                    "Rooms"
+                ],
+                "summary": "Hapus ruang",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Room ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "message: Ruang berhasil dihapus",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "error: ID tidak valid",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "error: Ruang memiliki pemesanan aktif",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "error: Gagal menghapus ruang",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/stats": {
+            "get": {
+                "tags": [
+                    "Stats"
+                ],
+                "summary": "Ambil Statistik Dashboard",
+                "responses": {}
+            }
+        },
+        "/users": {
+            "get": {
+                "description": "Mengambil daftar semua user yang terdaftar (untuk dashboard admin)",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Get All Users",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.User"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "models.Booking": {
+            "type": "object",
+            "properties": {
+                "end_time": {
+                    "description": "Format: \"2006-01-02 15:04:05\"",
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "purpose": {
+                    "type": "string"
+                },
+                "room_id": {
+                    "type": "integer"
+                },
+                "start_time": {
+                    "description": "Format: \"2006-01-02 15:04:05\"",
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "user_id": {
+                    "type": "integer"
+                }
+            }
+        },
+        "models.LoginRequest": {
+            "type": "object",
+            "required": [
+                "email",
+                "password"
+            ],
+            "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.Room": {
+            "type": "object",
+            "properties": {
+                "capacity": {
+                    "type": "integer"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "is_active": {
+                    "type": "boolean"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.User": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "role": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "securityDefinitions": {
+        "BearerAuth": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
+    }
+}
