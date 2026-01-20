@@ -4,6 +4,7 @@ import (
 	"backend/models"
 	"backend/repository"
 	"errors"
+	"strconv" // Kita butuh ini buat convert string ID ke int
 	"time"
 )
 
@@ -17,12 +18,12 @@ func NewBookingService(repo *repository.BookingRepository) *BookingService {
 
 // 1. BUSINESS LOGIC FUNCTIONS (PURE FUNCTIONS)
 
-// IsTimeConflict 
+// IsTimeConflict
 func IsTimeConflict(newStart, newEnd, existingStart, existingEnd time.Time) bool {
 	return newStart.Before(existingEnd) && newEnd.After(existingStart)
 }
 
-// CalculateDurationHours 
+// CalculateDurationHours
 func CalculateDurationHours(startStr, endStr string) (float64, error) {
 	layout := "2006-01-02 15:04:05" // Format MySQL DateTime
 	startTime, err := time.Parse(layout, startStr)
@@ -64,11 +65,21 @@ func (s *BookingService) CreateBooking(req models.Booking) error {
 	return s.Repo.CreateBooking(req)
 }
 
-func (s *BookingService) GetBookings(userIDStr string) ([]models.Booking, error) {
+// --- PERBAIKAN DISINI ---
+// Update return type jadi []models.BookingResponse
+func (s *BookingService) GetBookings(userIDStr string) ([]models.BookingResponse, error) {
+	// Case 1: Get All (Admin)
 	if userIDStr == "" {
-		return s.Repo.GetAllBookings()
+		return s.Repo.GetAllBookings() // Ini sudah return []BookingResponse
 	}
-	return s.Repo.GetAllBookings() 
+
+	// Case 2: Get By User ID (Dosen)
+	// Kita perlu convert userIDStr (string) ke int dulu karena repo butuh int
+	userID, err := strconv.Atoi(userIDStr)
+	if err != nil {
+		return nil, errors.New("invalid user id format")
+	}
+	return s.Repo.GetBookingsByUserID(userID) // Ini juga sudah return []BookingResponse
 }
 
 // Wrapper for UpdateStatus
